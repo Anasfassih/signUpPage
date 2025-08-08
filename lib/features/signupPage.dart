@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:signup_page/core/sizeAnimation.dart';
 import '../core/Custom_appButtons.dart';
 import '../core/Custom_textFields.dart';
 import '../core/Custom_appColors.dart';
@@ -28,10 +29,12 @@ class SignupPage extends StatelessWidget {
               obscureText: true,
             ),
             SizedBox(height: 16),
-            CustomTextField(
-              hintText: 'Confirm Password',
-              controller: confirmPasswordController,
-              obscureText: true,
+             SizeTransitionExample(
+              child: CustomTextField(
+                hintText: 'Confirm Password',
+                controller: confirmPasswordController,
+                obscureText: true,
+              ),
             ),
             SizedBox(height: 24),
             CustomButton(
@@ -42,9 +45,10 @@ class SignupPage extends StatelessWidget {
               },
             ),
             TextButton(
-              onPressed: () => Navigator.pushNamed(context, '/login'),
-              child: Text("Already have an account? Log in"),
-            ),
+                onPressed: () => Navigator.pushNamed(context, '/login'),
+                child: Text("Already have an account? Log in"),
+              ),
+            
           ],
         ),
       ),
